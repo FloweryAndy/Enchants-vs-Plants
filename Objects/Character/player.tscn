@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://uyvhu153r61e"]
+
+[ext_resource type="Texture2D" uid="uid://dox8j4w6psj6r" path="res://Art/Sprite16/player.png" id="1_76i8o"]
+[ext_resource type="Script" path="res://Objects/Character/player.gd" id="1_ftvi2"]
+[ext_resource type="PackedScene" uid="uid://c161anki8ua2t" path="res://Objects/Character/watering_can.tscn" id="2_bxkwo"]
+[ext_resource type="Script" path="res://Objects/Character/watering_can.gd" id="3_1h52i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4ch1"]
+size = Vector2(5, 6)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(4, -6)
+script = ExtResource("1_ftvi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_76i8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_j4ch1")
+
+[node name="WateringCan" parent="." instance=ExtResource("2_bxkwo")]
+script = ExtResource("3_1h52i")

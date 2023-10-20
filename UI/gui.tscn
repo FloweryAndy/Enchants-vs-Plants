@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://behsc24kphsls"]
+
+[ext_resource type="Script" path="res://UI/gui.gd" id="1_dffke"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dffke")

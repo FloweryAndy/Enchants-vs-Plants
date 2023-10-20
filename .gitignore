@@ -3,5 +3,4 @@
 .directory
 export_presets.cfg
 *.import
-*.aseprite
 .vscode/

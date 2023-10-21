@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxjcpjf1cxhik" path="res://Art/Cutscene/opening3.png" id="4_x2sij"]
 [ext_resource type="Texture2D" uid="uid://dkdfso2wap8tb" path="res://Art/Cutscene/opening4.png" id="5_imfak"]
 
-[node name="OpeningCutscene" type="Control"]
-layout_mode = 3
+[node name="OpeningCutscene" type="CenterContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,24 +17,12 @@ script = ExtResource("1_a57od")
 opening = Array[Texture]([ExtResource("2_xi7s6"), ExtResource("3_2rvv4"), ExtResource("4_x2sij"), ExtResource("5_imfak")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch_mode = 6
+layout_mode = 2
+stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(0, 256)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -64.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64

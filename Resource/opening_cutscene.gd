@@ -1,7 +1,7 @@
 extends Control
 
 @onready var texture_rect = $TextureRect
-@onready var dialogue_label = $MarginContainer/PanelContainer/MarginContainer/DialogueLabel
+@onready var dialogue_label = $TextureRect/MarginContainer/PanelContainer/MarginContainer/DialogueLabel
 
 @export var opening : Array[Texture]
 
@@ -10,14 +10,16 @@ var dialogue_line
 var resource = load("res://Resource/opening_cutscene.dialogue")
 
 func _ready():
+	add_user_signal("finished_cutscene")
 	texture_rect.texture = opening[count]
 	dialogue_line = await DialogueManager.get_next_dialogue_line(resource, "start")
 	dialogue_label.dialogue_line = dialogue_line
 	dialogue_label.type_out()
 
-func _on_dialogue_label_gui_input(event):
-	if event is InputEventMouseButton and not dialogue_label.is_typing:
+func _process(delta):
+	if Input.is_action_just_pressed("interact") and not dialogue_label.is_typing:
 		if count == 4:
+			emit_signal("finished_cutscene")
 			visible = false
 		else:
 			dialogue_line = await DialogueManager.get_next_dialogue_line(resource, dialogue_line.next_id)

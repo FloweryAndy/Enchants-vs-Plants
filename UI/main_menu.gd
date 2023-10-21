@@ -2,6 +2,9 @@ extends Control
 
 @onready var tab_container = $"MarginContainer/PanelContainer/TabContainer"
 
+func _ready():
+	visible = true
+
 func start_game():
 	visible = false
 	$"..".process_mode = Node.PROCESS_MODE_INHERIT

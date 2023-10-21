@@ -10,6 +10,7 @@ var dialogue_line
 var resource = load("res://Resource/opening_cutscene.dialogue")
 
 func _ready():
+	visible = true
 	add_user_signal("finished_cutscene")
 	texture_rect.texture = opening[count]
 	dialogue_line = await DialogueManager.get_next_dialogue_line(resource, "start")

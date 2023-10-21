@@ -1,7 +1,7 @@
 extends Control
 
 @onready var texture_rect = $TextureRect
-@onready var dialogue_label = $MarginContainer/PanelContainer/DialogueLabel
+@onready var dialogue_label = $MarginContainer/PanelContainer/MarginContainer/DialogueLabel
 
 @export var opening : Array[Texture]
 

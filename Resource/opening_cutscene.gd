@@ -18,7 +18,7 @@ func _ready():
 func _on_dialogue_label_gui_input(event):
 	if event is InputEventMouseButton and not dialogue_label.is_typing:
 		if count == 4:
-			queue_free()
+			visible = false
 		else:
 			dialogue_line = await DialogueManager.get_next_dialogue_line(resource, dialogue_line.next_id)
 			dialogue_label.dialogue_line = dialogue_line

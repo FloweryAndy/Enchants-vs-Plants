@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://bw2ae3ab86c"]
+[gd_scene load_steps=14 format=3 uid="uid://bw2ae3ab86c"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b7y4t"]
 [ext_resource type="AudioStream" uid="uid://bgo83arcpnoq" path="res://Sound/BGM/ba ba ba bah.mp3" id="2_cxej3"]
-[ext_resource type="PackedScene" uid="uid://uyvhu153r61e" path="res://Objects/Character/player.tscn" id="2_r5syk"]
+[ext_resource type="PackedScene" uid="uid://uyvhu153r61e" path="res://Objects/Character/main_player.tscn" id="2_r5syk"]
+[ext_resource type="Script" path="res://Resource/bgmplayer.gd" id="2_x6ubb"]
 [ext_resource type="PackedScene" uid="uid://c4awrfp4rhjw6" path="res://Resource/opening_cutscene.tscn" id="3_lujg1"]
-[ext_resource type="Script" path="res://bgmplayer.gd" id="3_vxe8h"]
-[ext_resource type="PackedScene" uid="uid://behsc24kphsls" path="res://UI/gui.tscn" id="4_12yqc"]
+[ext_resource type="PackedScene" uid="uid://behsc24kphsls" path="res://UI/main_gui.tscn" id="4_12yqc"]
 [ext_resource type="AudioStream" uid="uid://pvcgyu3ei0f4" path="res://Sound/BGM/battle on halloween.mp3" id="4_amtum"]
 [ext_resource type="AudioStream" uid="uid://di74gmgosuvhv" path="res://Sound/BGM/contemplate.mp3" id="5_7e5dc"]
 [ext_resource type="AudioStream" uid="uid://csdgnv348xuam" path="res://Sound/BGM/exploring for tricks.mp3" id="6_sw7yl"]
 [ext_resource type="PackedScene" uid="uid://cgcjn564k64cg" path="res://UI/main_menu.tscn" id="6_yti0h"]
 [ext_resource type="AudioStream" uid="uid://dbx2squhp1hyv" path="res://Sound/BGM/pumpkin patch kid.mp3" id="7_sd4bo"]
+[ext_resource type="PackedScene" uid="uid://cq8gx5kr8me05" path="res://Objects/Character/battle_player.tscn" id="10_n2b4t"]
 
 [sub_resource type="TileSet" id="TileSet_ow2yv"]
 
@@ -21,24 +22,41 @@ script = ExtResource("1_b7y4t")
 process_mode = 3
 autoplay = true
 bus = &"Music"
-script = ExtResource("3_vxe8h")
-playlist = Array[AudioStreamMP3]([ExtResource("2_cxej3"), ExtResource("4_amtum"), ExtResource("5_7e5dc"), ExtResource("6_sw7yl"), ExtResource("7_sd4bo")])
+script = ExtResource("2_x6ubb")
+playlist = Array[AudioStream]([ExtResource("2_cxej3"), ExtResource("4_amtum"), ExtResource("5_7e5dc"), ExtResource("6_sw7yl"), ExtResource("7_sd4bo")])
 
-[node name="MainCamera" type="Camera2D" parent="."]
+[node name="MainLevel" type="Node2D" parent="."]
+
+[node name="MainCamera" type="Camera2D" parent="MainLevel"]
 offset = Vector2(640, 480)
 
-[node name="BattleCamera" type="Camera2D" parent="."]
-offset = Vector2(640, 480)
-
-[node name="GameLevel" type="Node2D" parent="."]
-
-[node name="TileMap" type="TileMap" parent="GameLevel"]
+[node name="TileMap" type="TileMap" parent="MainLevel"]
 tile_set = SubResource("TileSet_ow2yv")
 format = 2
 
-[node name="Player" parent="GameLevel" instance=ExtResource("2_r5syk")]
+[node name="MainPlayer" parent="MainLevel" instance=ExtResource("2_r5syk")]
 
-[node name="GUI" parent="." instance=ExtResource("4_12yqc")]
+[node name="MainGUI" parent="MainLevel" instance=ExtResource("4_12yqc")]
+
+[node name="BattleLevel" type="Node2D" parent="."]
+visible = false
+
+[node name="BattleCamera" type="Camera2D" parent="BattleLevel"]
+offset = Vector2(640, 480)
+
+[node name="TileMap" type="TileMap" parent="BattleLevel"]
+tile_set = SubResource("TileSet_ow2yv")
+format = 2
+
+[node name="BattlePlayer" parent="BattleLevel" instance=ExtResource("10_n2b4t")]
+
+[node name="BattleGUI" type="Control" parent="BattleLevel"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="OpeningCutscene" parent="." instance=ExtResource("3_lujg1")]
 

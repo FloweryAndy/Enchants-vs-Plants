@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://behsc24kphsls"]
 
-[ext_resource type="Script" path="res://UI/gui.gd" id="1_dffke"]
+[ext_resource type="Script" path="res://UI/main_gui.gd" id="1_ifxi2"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_l6fgw"]
 
-[node name="GUI" type="Control"]
+[node name="MainGUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dffke")
+script = ExtResource("1_ifxi2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -25,6 +25,7 @@ theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
 [node name="RightPanelContainer" type="PanelContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 
@@ -35,22 +36,24 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="BottomPanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="DialogueBox" type="PanelContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BottomPanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/DialogueBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="DialogueLabel" type="RichTextLabel" parent="MarginContainer/BottomPanelContainer/MarginContainer"]
+[node name="DialogueLabel" type="RichTextLabel" parent="MarginContainer/DialogueBox/MarginContainer"]
 layout_mode = 2
 script = ExtResource("2_l6fgw")
 
 [node name="LeftPanelContainer" type="PanelContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 
@@ -62,6 +65,7 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="TopPanelContainer" type="PanelContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 

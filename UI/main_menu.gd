@@ -31,6 +31,7 @@ func _on_options_button_pressed():
 
 func _on_play_game_button_pressed():
 	start_game()
+	$"..".process_mode = Node.PROCESS_MODE_INHERIT
 
 func _on_back_button_pressed():
 	tab_container.current_tab = 0

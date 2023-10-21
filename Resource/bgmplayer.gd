@@ -1,18 +1,18 @@
 extends AudioStreamPlayer
 
 
-@export var playlist : Array[AudioStreamMP3]
+@export var playlist : Array[AudioStream]
 
 func _process(delta):
-	if $"../MainMenu".visible:
+	if $"../MainMenu".is_visible():
 		change_song(0)
-	elif $"../OpeningCutscene":
+	elif $"../OpeningCutscene".is_visible():
 		change_song(3)
-	elif $"../GUI".dialogue_label.visible:
+	elif $"../MainLevel/MainGUI".dialogue_box.is_visible():
 		change_song(2)
-	elif $"../MainCamera".is_current():
+	elif $"../MainLevel".is_visible():
 		change_song(4)
-	elif $"../BattleCamera".is_current():
+	elif $"../BattleLevel".is_visible():
 		change_song(1)
 
 func change_song(SongNumber : int):

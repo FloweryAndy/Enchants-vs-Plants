@@ -56,5 +56,4 @@ theme_override_font_sizes/normal_font_size = 32
 script = ExtResource("3_efvno")
 skip_action = "interact"
 
-[connection signal="finished_typing" from="MarginContainer/PanelContainer/MarginContainer/DialogueLabel" to="." method="_on_dialogue_label_finished_typing"]
 [connection signal="gui_input" from="MarginContainer/PanelContainer/MarginContainer/DialogueLabel" to="." method="_on_dialogue_label_gui_input"]

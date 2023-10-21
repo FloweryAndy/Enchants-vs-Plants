@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://co763mp5ropv6" path="res://Art/Sprite16/player-idle.png" id="2_ynlf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4ch1"]
-size = Vector2(5, 6)
+size = Vector2(5, 2)
 
 [sub_resource type="Animation" id="Animation_tumq6"]
 length = 0.001
@@ -54,7 +54,7 @@ texture = ExtResource("2_ynlf1")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 3)
+position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_j4ch1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

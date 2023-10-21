@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 
 @export var playlist : Array[AudioStream]
 
-func _process(delta):
+func _process(_delta):
 	if $"../MainMenu".is_visible():
 		change_song(0)
 	elif $"../OpeningCutscene".is_visible():

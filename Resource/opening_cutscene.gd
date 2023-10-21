@@ -17,7 +17,7 @@ func _ready():
 	dialogue_label.dialogue_line = dialogue_line
 	dialogue_label.type_out()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("interact") and not dialogue_label.is_typing:
 		if count == 4:
 			emit_signal("finished_cutscene")

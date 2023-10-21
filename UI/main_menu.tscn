@@ -2,9 +2,138 @@
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_oymer"]
 
-[node name="Main Menu" type="Control"]
+[node name="MainMenu" type="Control"]
+process_mode = 2
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -960.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_oymer")
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+tabs_visible = false
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Main"]
+layout_mode = 2
+theme_override_constants/separation = -8
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Enchants vs Plants"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Main"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PlayGameButton" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Play Game"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
+
+[node name="QuitGameButton" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit Game"
+
+[node name="Options" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Options"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Music Volume"
+
+[node name="SoundVolumeLabel" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Sound Volume"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+min_value = -100.0
+max_value = 0.0
+
+[node name="SoundVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+min_value = -100.0
+max_value = 0.0
+
+[node name="BackButton" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Options"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Go Back"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/PlayGameButton" to="." method="_on_play_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer2/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer2/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Options/BackButton" to="." method="_on_back_button_pressed"]

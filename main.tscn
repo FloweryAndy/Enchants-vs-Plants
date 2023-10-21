@@ -1,19 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw2ae3ab86c"]
+[gd_scene load_steps=6 format=3 uid="uid://bw2ae3ab86c"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b7y4t"]
 [ext_resource type="PackedScene" uid="uid://uyvhu153r61e" path="res://Objects/Character/player.tscn" id="2_r5syk"]
-[ext_resource type="Script" path="res://Objects/Character/player.gd" id="3_pdwoy"]
 [ext_resource type="PackedScene" uid="uid://behsc24kphsls" path="res://UI/gui.tscn" id="4_12yqc"]
-[ext_resource type="Script" path="res://UI/gui.gd" id="5_u1s21"]
 [ext_resource type="PackedScene" uid="uid://cgcjn564k64cg" path="res://UI/main_menu.tscn" id="6_yti0h"]
-[ext_resource type="Script" path="res://UI/main_menu.gd" id="7_uip7d"]
 
 [sub_resource type="TileSet" id="TileSet_ow2yv"]
 
 [node name="Main" type="Node"]
+process_mode = 4
 script = ExtResource("1_b7y4t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(160, 120)
 zoom = Vector2(4, 4)
 
 [node name="GameLevel" type="Node2D" parent="."]
@@ -23,10 +22,8 @@ tile_set = SubResource("TileSet_ow2yv")
 format = 2
 
 [node name="Player" parent="GameLevel" instance=ExtResource("2_r5syk")]
-script = ExtResource("3_pdwoy")
 
 [node name="GUI" parent="." instance=ExtResource("4_12yqc")]
-script = ExtResource("5_u1s21")
 
-[node name="Main Menu" parent="." instance=ExtResource("6_yti0h")]
-script = ExtResource("7_uip7d")
+[node name="MainMenu" parent="." instance=ExtResource("6_yti0h")]
+process_mode = 3

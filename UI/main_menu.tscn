@@ -1,20 +1,22 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgcjn564k64cg"]
 
-[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_oymer"]
-[ext_resource type="Texture2D" uid="uid://bsi3q82trvrop" path="res://Art/Cutscene/cutscene.png" id="2_bwvfw"]
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_ras6x"]
+[ext_resource type="Texture2D" uid="uid://b5vuknhdklqoo" path="res://Art/Cutscene/opening1.png" id="2_mswot"]
 
 [node name="MainMenu" type="CenterContainer"]
-process_mode = 2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_oymer")
+process_mode = 3
+visible = false
+custom_minimum_size = Vector2(1280, 960)
+offset_right = 2560.0
+offset_bottom = 1920.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+use_top_left = true
+script = ExtResource("1_ras6x")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_bwvfw")
+texture = ExtResource("2_mswot")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -32,6 +34,7 @@ layout_mode = 2
 tabs_visible = false
 
 [node name="Main" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 128
 alignment = 1
@@ -132,9 +135,9 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 48
 text = "Go Back"
 
-[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/PlayGameButton" to="." method="_on_play_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
-[connection signal="value_changed" from="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer2/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
-[connection signal="value_changed" from="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer2/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Options/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/PlayGameButton" to="." method="_on_play_game_button_pressed" flags=18]
+[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/OptionsButton" to="." method="_on_options_button_pressed" flags=18]
+[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/QuitGameButton" to="." method="_on_quit_game_button_pressed" flags=18]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer2/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed" flags=18]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/TabContainer/Options/HBoxContainer/VBoxContainer2/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed" flags=18]
+[connection signal="pressed" from="MarginContainer/PanelContainer/TabContainer/Options/BackButton" to="." method="_on_back_button_pressed" flags=18]

@@ -7,7 +7,7 @@ extends Control
 
 var count = 0
 var dialogue_line
-var resource = load("res://Resource/opening_cutscene.dialogue")
+var resource = load("res://Level/opening_cutscene.dialogue")
 
 func _ready():
 	visible = true

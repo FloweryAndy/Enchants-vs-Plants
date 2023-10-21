@@ -11,7 +11,6 @@ var resource = load("res://Resource/opening_cutscene.dialogue")
 
 func _ready():
 	texture_rect.texture = opening[count]
-	count += 1
 	dialogue_line = await DialogueManager.get_next_dialogue_line(resource, "start")
 	dialogue_label.dialogue_line = dialogue_line
 	dialogue_label.type_out()

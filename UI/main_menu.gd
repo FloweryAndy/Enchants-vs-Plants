@@ -12,9 +12,17 @@ func exit_game():
 
 func _on_sound_volume_slider_value_changed(value:float):
 	AudioServer.set_bus_volume_db(2, value)
+	if value == -20:
+		AudioServer.set_bus_mute(2, true)
+	else:
+		AudioServer.set_bus_mute(2, false)
 
 func _on_music_volume_slider_value_changed(value:float):
 	AudioServer.set_bus_volume_db(1, value)
+	if value == -20:
+		AudioServer.set_bus_mute(1, true)
+	else:
+		AudioServer.set_bus_mute(1, false)
 
 func _on_quit_game_button_pressed():
 	exit_game()

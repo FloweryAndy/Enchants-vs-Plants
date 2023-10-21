@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://behsc24kphsls"]
+[gd_scene load_steps=3 format=3 uid="uid://behsc24kphsls"]
 
 [ext_resource type="Script" path="res://UI/gui.gd" id="1_dffke"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_l6fgw"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -44,6 +45,10 @@ theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
+
+[node name="DialogueLabel" type="RichTextLabel" parent="MarginContainer/BottomPanelContainer/MarginContainer"]
+layout_mode = 2
+script = ExtResource("2_l6fgw")
 
 [node name="LeftPanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2

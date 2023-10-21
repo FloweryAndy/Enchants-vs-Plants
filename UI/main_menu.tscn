@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgcjn564k64cg"]
+[gd_scene load_steps=3 format=3 uid="uid://cgcjn564k64cg"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_oymer"]
 [ext_resource type="Texture2D" uid="uid://bsi3q82trvrop" path="res://Art/Cutscene/cutscene.png" id="2_bwvfw"]
-[ext_resource type="AudioStream" uid="uid://tskhibwojqw5" path="res://Sound/BGM/ba ba ba bah.wav" id="2_yciwu"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 2
@@ -24,11 +23,6 @@ grow_vertical = 2
 texture = ExtResource("2_bwvfw")
 expand_mode = 3
 stretch_mode = 6
-
-[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_yciwu")
-autoplay = true
-bus = &"Music"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -1,6 +1,5 @@
 extends Control
 
-@onready var main_menu_music = $MainMenuMusic
 @onready var tab_container = $"MarginContainer/PanelContainer/TabContainer"
 
 func start_game():

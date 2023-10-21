@@ -38,6 +38,15 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 theme/custom="res://Resource/theme.tres"
 
+[importer_defaults]
+
+wav={
+"edit/loop_mode": 2
+}
+mp3={
+"loop": true
+}
+
 [input]
 
 up={

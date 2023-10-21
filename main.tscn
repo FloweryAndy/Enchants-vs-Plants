@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw2ae3ab86c"]
+[gd_scene load_steps=7 format=3 uid="uid://bw2ae3ab86c"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b7y4t"]
 [ext_resource type="PackedScene" uid="uid://uyvhu153r61e" path="res://Objects/Character/player.tscn" id="2_r5syk"]
+[ext_resource type="PackedScene" uid="uid://cxluh4iioqu6t" path="res://Resource/opening_cutscene.tscn" id="3_lujg1"]
 [ext_resource type="PackedScene" uid="uid://behsc24kphsls" path="res://UI/gui.tscn" id="4_12yqc"]
 [ext_resource type="PackedScene" uid="uid://cgcjn564k64cg" path="res://UI/main_menu.tscn" id="6_yti0h"]
 
@@ -12,8 +13,7 @@ process_mode = 4
 script = ExtResource("1_b7y4t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(160, 120)
-zoom = Vector2(4, 4)
+offset = Vector2(640, 480)
 
 [node name="GameLevel" type="Node2D" parent="."]
 
@@ -22,6 +22,8 @@ tile_set = SubResource("TileSet_ow2yv")
 format = 2
 
 [node name="Player" parent="GameLevel" instance=ExtResource("2_r5syk")]
+
+[node name="OpeningCutscene" parent="." instance=ExtResource("3_lujg1")]
 
 [node name="GUI" parent="." instance=ExtResource("4_12yqc")]
 

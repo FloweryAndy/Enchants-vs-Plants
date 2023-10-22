@@ -1,62 +1,66 @@
-[gd_scene load_steps=53 format=3 uid="uid://bw2ae3ab86c"]
+[gd_scene load_steps=59 format=3 uid="uid://bw2ae3ab86c"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b7y4t"]
-[ext_resource type="AudioStream" uid="uid://dc3ywoikx8blo" path="res://Sound/BGM/ba ba ba bah.mp3" id="2_cxej3"]
+[ext_resource type="AudioStream" uid="uid://bgo83arcpnoq" path="res://Sound/BGM/ba ba ba bah.mp3" id="2_cxej3"]
 [ext_resource type="Script" path="res://Resource/bgmplayer.gd" id="2_x6ubb"]
-[ext_resource type="AudioStream" uid="uid://ba1t5g5jtqene" path="res://Sound/BGM/battle on halloween.mp3" id="4_amtum"]
-[ext_resource type="AudioStream" uid="uid://cacodiwei81rg" path="res://Sound/BGM/contemplate.mp3" id="5_7e5dc"]
-[ext_resource type="AudioStream" uid="uid://begukis4s6j4w" path="res://Sound/BGM/exploring for tricks.mp3" id="6_sw7yl"]
-[ext_resource type="AudioStream" uid="uid://bh3s3ykdt3itt" path="res://Sound/BGM/pumpkin patch kid.mp3" id="7_sd4bo"]
-[ext_resource type="TileSet" path="res://Resource/outside_tileset.tres" id="8_5ic3q"]
+[ext_resource type="AudioStream" uid="uid://pvcgyu3ei0f4" path="res://Sound/BGM/battle on halloween.mp3" id="4_amtum"]
+[ext_resource type="AudioStream" uid="uid://di74gmgosuvhv" path="res://Sound/BGM/contemplate.mp3" id="5_7e5dc"]
+[ext_resource type="AudioStream" uid="uid://csdgnv348xuam" path="res://Sound/BGM/exploring for tricks.mp3" id="6_sw7yl"]
+[ext_resource type="AudioStream" uid="uid://dbx2squhp1hyv" path="res://Sound/BGM/pumpkin patch kid.mp3" id="7_sd4bo"]
+[ext_resource type="TileSet" uid="uid://e6ecdxumdqdw" path="res://Level/outside_tileset.tres" id="8_5ic3q"]
+[ext_resource type="Script" path="res://enemy.gd" id="9_dl4es"]
+[ext_resource type="Texture2D" uid="uid://wntofpb3s624" path="res://Art/Sprite16/Enemy16.png" id="10_v2umg"]
 [ext_resource type="Script" path="res://Character/Player/main_player.gd" id="10_wsedr"]
-[ext_resource type="Texture2D" uid="uid://c5j1d7usekog2" path="res://Art/Sprite16/player_animation.png" id="11_1fnlf"]
+[ext_resource type="Texture2D" uid="uid://qkyig53lx6ma" path="res://Art/Sprite16/player_animation.png" id="11_1fnlf"]
 [ext_resource type="Script" path="res://UI/main_gui.gd" id="11_e68b5"]
+[ext_resource type="Script" path="res://MainPartner.gd" id="11_ywj8b"]
 [ext_resource type="Script" path="res://Character/Player/watering_can.gd" id="12_2f6jb"]
+[ext_resource type="Texture2D" uid="uid://bu2x7sjw4245d" path="res://Art/Sprite16/partner_animation.png" id="12_2xdf1"]
 [ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="12_mapth"]
 [ext_resource type="Script" path="res://Level/battle_level.gd" id="12_umvqs"]
-[ext_resource type="PackedScene" uid="uid://b7k25n0raddv0" path="res://Character/Partner/battle_partner.tscn" id="12_v7sen"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="12_ynj2j"]
-[ext_resource type="Texture2D" uid="uid://8qsbvfx2rmko" path="res://Art/Sprite16/watering_can.png" id="13_2utco"]
-[ext_resource type="Animation" path="res://Resource/pivot.res" id="14_lmgjk"]
-[ext_resource type="Texture2D" uid="uid://bt3nbl5lb2lsk" path="res://Art/Background/battle_background.png" id="17_ipb67"]
+[ext_resource type="Texture2D" uid="uid://c6o58tqx75g4s" path="res://Art/Sprite16/watering_can.png" id="13_2utco"]
+[ext_resource type="Animation" uid="uid://crsg84xykx6b6" path="res://Resource/pivot.res" id="14_lmgjk"]
+[ext_resource type="Texture2D" uid="uid://b4aqsmeu3dg1b" path="res://Art/Sprite128/partner128.png" id="17_1sxjw"]
+[ext_resource type="Texture2D" uid="uid://b1ec4gwxxohje" path="res://Art/Background/battle_background.png" id="17_ipb67"]
 [ext_resource type="Script" path="res://Level/opening_cutscene.gd" id="17_kc0l6"]
-[ext_resource type="Texture2D" uid="uid://bk1gymm6tvgin" path="res://Art/Cutscene/opening1.png" id="18_vknxl"]
-[ext_resource type="Texture2D" uid="uid://c7qqnf45kyja" path="res://Art/Cutscene/opening2.png" id="19_0nc17"]
+[ext_resource type="Texture2D" uid="uid://b5vuknhdklqoo" path="res://Art/Cutscene/opening1.png" id="18_vknxl"]
+[ext_resource type="Texture2D" uid="uid://d2cx757jgmvap" path="res://Art/Cutscene/opening2.png" id="19_0nc17"]
 [ext_resource type="Script" path="res://Character/Player/battle_player.gd" id="19_ha880"]
-[ext_resource type="Texture2D" uid="uid://d1m4wf0jg8qwe" path="res://Art/Cutscene/opening3.png" id="20_8x0u7"]
-[ext_resource type="Texture2D" uid="uid://dwsaq2h7ooxjc" path="res://Art/Sprite128/player_animation2.png" id="20_u8chc"]
-[ext_resource type="Texture2D" uid="uid://0crski00xf8b" path="res://Art/Cutscene/opening4.png" id="21_0g8s6"]
+[ext_resource type="Texture2D" uid="uid://cxjcpjf1cxhik" path="res://Art/Cutscene/opening3.png" id="20_8x0u7"]
+[ext_resource type="Texture2D" uid="uid://bw7wnxa8ey5uj" path="res://Art/Sprite128/player_animation2.png" id="20_u8chc"]
+[ext_resource type="Texture2D" uid="uid://dforgcx0e6ro2" path="res://Art/Sprite128/candy_bomb.png" id="20_vxbw8"]
+[ext_resource type="Texture2D" uid="uid://dkdfso2wap8tb" path="res://Art/Cutscene/opening4.png" id="21_0g8s6"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="22_iwxcy"]
-[ext_resource type="Texture2D" uid="uid://doval0xltywu8" path="res://Art/Background/main_menu_background.png" id="23_7gewv"]
-[ext_resource type="Texture2D" uid="uid://ds5lvrwjpna72" path="res://Art/Background/title_logo.png" id="24_wxqin"]
+[ext_resource type="Texture2D" uid="uid://veqmhcupmf5r" path="res://Art/Background/main_menu_background.png" id="23_7gewv"]
+[ext_resource type="Texture2D" uid="uid://dofxk4saogh5b" path="res://Art/Background/title_logo.png" id="24_wxqin"]
 
 [sub_resource type="Curve2D" id="Curve2D_4ctgk"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -192, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -192, 0)
 }
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsh2d"]
-size = Vector2(9, 2)
+size = Vector2(16, 16)
 
-[sub_resource type="Animation" id="Animation_keo1s"]
+[sub_resource type="Animation" id="Animation_7xdgg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WateringCan:position")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, -6)]
+"update": 1,
+"values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_mgyvl"]
+[sub_resource type="Animation" id="Animation_pakql"]
 resource_name = "idle"
-length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -65,74 +69,33 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.175, 0.35, 0.525),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WateringCan:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(7, -3), Vector2(7, -4), Vector2(7, -5), Vector2(7, -4)]
-}
-
-[sub_resource type="Animation" id="Animation_70s1f"]
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_2vhw0"]
-resource_name = "walk"
-length = 0.7
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.175, 0.35, 0.525),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [4, 6, 5, 7]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WateringCan:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2(8, -6), Vector2(8, -4)]
+"values": [0, 1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4teeg"]
+[sub_resource type="Animation" id="Animation_mr6yw"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5mv4"]
 _data = {
-"RESET": SubResource("Animation_keo1s"),
-"idle": SubResource("Animation_mgyvl"),
-"roll": SubResource("Animation_70s1f"),
-"walk": SubResource("Animation_2vhw0")
+"RESET": SubResource("Animation_7xdgg"),
+"idle": SubResource("Animation_pakql"),
+"walk": SubResource("Animation_mr6yw")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4ch1"]
@@ -241,6 +204,9 @@ _data = {
 
 [sub_resource type="TileSet" id="TileSet_ow2yv"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54kel"]
+size = Vector2(81, 102)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5u8vb"]
 size = Vector2(59, 101)
 
@@ -334,6 +300,9 @@ _data = {
 "walk": SubResource("Animation_qqu4n")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_sio1a"]
+radius = 64.1421
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8by2w"]
 
 [node name="Main" type="Node"]
@@ -350,6 +319,9 @@ playlist = Array[AudioStream]([ExtResource("2_cxej3"), ExtResource("4_amtum"), E
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Camera2D"]
+remote_path = NodePath("../../BattleLevel")
+
 [node name="MainLevel" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="MainLevel"]
@@ -360,6 +332,150 @@ layer_0/tile_data = PackedInt32Array(-1900583, 327680, 5, -1835047, 327680, 5, -
 
 [node name="Enemies" type="Node2D" parent="MainLevel"]
 
+[node name="EnemyPath" type="Path2D" parent="MainLevel/Enemies"]
+position = Vector2(0, -8)
+curve = SubResource("Curve2D_4ctgk")
+
+[node name="EnemyPathFollow" type="PathFollow2D" parent="MainLevel/Enemies/EnemyPath"]
+position = Vector2(-176.021, 0)
+progress = 176.0
+rotates = false
+
+[node name="_Timer_24102" type="Timer" parent="MainLevel/Enemies/EnemyPath/EnemyPathFollow"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Enemy" type="Area2D" parent="MainLevel/Enemies"]
+position = Vector2(69, -8)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("9_dl4es")
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy"]
+texture = ExtResource("10_v2umg")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Enemies/Enemy"]
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Enemies/Enemy"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="Enemy2" type="Area2D" parent="MainLevel/Enemies"]
+position = Vector2(69, -43)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("9_dl4es")
+enemy_number = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy2"]
+texture = ExtResource("10_v2umg")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Enemies/Enemy2"]
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Enemies/Enemy2"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="Enemy3" type="Area2D" parent="MainLevel/Enemies"]
+position = Vector2(116, -154)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("9_dl4es")
+enemy_number = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy3"]
+texture = ExtResource("10_v2umg")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Enemies/Enemy3"]
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Enemies/Enemy3"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="Enemy4" type="Area2D" parent="MainLevel/Enemies"]
+position = Vector2(-84, -58)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("9_dl4es")
+enemy_number = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy4"]
+texture = ExtResource("10_v2umg")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Enemies/Enemy4"]
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Enemies/Enemy4"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="Enemy5" type="Area2D" parent="MainLevel/Enemies"]
+position = Vector2(-30, 59)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("9_dl4es")
+enemy_number = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy5"]
+texture = ExtResource("10_v2umg")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Enemies/Enemy5"]
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Enemies/Enemy5"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="Enemy6" type="Area2D" parent="MainLevel/Enemies"]
+position = Vector2(45, -111)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("9_dl4es")
+enemy_number = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy6"]
+texture = ExtResource("10_v2umg")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Enemies/Enemy6"]
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Enemies/Enemy6"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
 [node name="Party" type="Node2D" parent="MainLevel"]
 
 [node name="PartnerPath" type="Path2D" parent="MainLevel/Party"]
@@ -367,16 +483,22 @@ position = Vector2(0, -8)
 curve = SubResource("Curve2D_4ctgk")
 
 [node name="PartnerPathFollow" type="PathFollow2D" parent="MainLevel/Party/PartnerPath"]
-position = Vector2(-15.9793, 0)
+position = Vector2(-176.021, 0)
 progress = 176.0
 rotates = false
+loop = false
 
 [node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow"]
 collision_layer = 4
 collision_mask = 4
+script = ExtResource("11_ywj8b")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow/MainPartner"]
-rotation = -1.5708
+texture = ExtResource("12_2xdf1")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow/MainPartner"]
 position = Vector2(0.5, -1)
@@ -384,14 +506,176 @@ shape = SubResource("RectangleShape2D_tsh2d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow/MainPartner"]
 libraries = {
-"": SubResource("AnimationLibrary_4teeg")
+"": SubResource("AnimationLibrary_q5mv4")
 }
 
 [node name="_Timer_24102" type="Timer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow"]
 wait_time = 0.2
 one_shot = true
 
+[node name="PartnerPathFollow2" type="PathFollow2D" parent="MainLevel/Party/PartnerPath"]
+position = Vector2(-160.016, 0)
+progress = 160.0
+rotates = false
+loop = false
+
+[node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow2"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("11_ywj8b")
+partner_number = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow2/MainPartner"]
+texture = ExtResource("12_2xdf1")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow2/MainPartner"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow2/MainPartner"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="_Timer_24102" type="Timer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="PartnerPathFollow3" type="PathFollow2D" parent="MainLevel/Party/PartnerPath"]
+position = Vector2(-144.005, 0)
+progress = 144.0
+rotates = false
+loop = false
+
+[node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow3"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("11_ywj8b")
+partner_number = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow3/MainPartner"]
+texture = ExtResource("12_2xdf1")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow3/MainPartner"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow3/MainPartner"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="_Timer_24102" type="Timer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow3"]
+wait_time = 0.2
+one_shot = true
+
+[node name="PartnerPathFollow4" type="PathFollow2D" parent="MainLevel/Party/PartnerPath"]
+position = Vector2(-128.006, 0)
+progress = 128.0
+rotates = false
+loop = false
+
+[node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow4"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("11_ywj8b")
+partner_number = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow4/MainPartner"]
+texture = ExtResource("12_2xdf1")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow4/MainPartner"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow4/MainPartner"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="_Timer_24102" type="Timer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow4"]
+wait_time = 0.2
+one_shot = true
+
+[node name="PartnerPathFollow5" type="PathFollow2D" parent="MainLevel/Party/PartnerPath"]
+position = Vector2(-112.004, 0)
+progress = 112.0
+rotates = false
+loop = false
+
+[node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow5"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("11_ywj8b")
+partner_number = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow5/MainPartner"]
+texture = ExtResource("12_2xdf1")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow5/MainPartner"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow5/MainPartner"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="_Timer_24102" type="Timer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow5"]
+wait_time = 0.2
+one_shot = true
+
+[node name="PartnerPathFollow6" type="PathFollow2D" parent="MainLevel/Party/PartnerPath"]
+position = Vector2(-96, 0)
+progress = 96.0
+rotates = false
+loop = false
+
+[node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow6"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("11_ywj8b")
+partner_number = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow6/MainPartner"]
+texture = ExtResource("12_2xdf1")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow6/MainPartner"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow6/MainPartner"]
+libraries = {
+"": SubResource("AnimationLibrary_q5mv4")
+}
+
+[node name="_Timer_24102" type="Timer" parent="MainLevel/Party/PartnerPath/PartnerPathFollow6"]
+wait_time = 0.2
+one_shot = true
+
 [node name="MainPlayer" type="CharacterBody2D" parent="MainLevel/Party"]
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("10_wsedr")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/MainPlayer"]
@@ -512,6 +796,7 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="BattleLevel" type="Node2D" parent="."]
+visible = false
 script = ExtResource("12_umvqs")
 
 [node name="CenterContainer" type="CenterContainer" parent="BattleLevel"]
@@ -528,25 +813,21 @@ tile_set = SubResource("TileSet_ow2yv")
 format = 2
 
 [node name="Party" type="Node2D" parent="BattleLevel"]
+position = Vector2(-145, 417)
 
 [node name="Partners" type="Node2D" parent="BattleLevel/Party"]
 
-[node name="BattlePartner1" parent="BattleLevel/Party/Partners" instance=ExtResource("12_v7sen")]
+[node name="BattlePartner1" type="CharacterBody2D" parent="BattleLevel/Party/Partners"]
+position = Vector2(-128, 0)
 
-[node name="BattlePartner2" parent="BattleLevel/Party/Partners" instance=ExtResource("12_v7sen")]
-position = Vector2(-256, 0)
+[node name="Sprite2D" type="Sprite2D" parent="BattleLevel/Party/Partners/BattlePartner1"]
+position = Vector2(0, -64)
+texture = ExtResource("17_1sxjw")
+hframes = 6
 
-[node name="BattlePartner3" parent="BattleLevel/Party/Partners" instance=ExtResource("12_v7sen")]
-position = Vector2(-384, 0)
-
-[node name="BattlePartner4" parent="BattleLevel/Party/Partners" instance=ExtResource("12_v7sen")]
-position = Vector2(-512, 0)
-
-[node name="BattlePartner5" parent="BattleLevel/Party/Partners" instance=ExtResource("12_v7sen")]
-position = Vector2(-640, 0)
-
-[node name="BattlePartner6" parent="BattleLevel/Party/Partners" instance=ExtResource("12_v7sen")]
-position = Vector2(-768, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleLevel/Party/Partners/BattlePartner1"]
+position = Vector2(0.5, -51)
+shape = SubResource("RectangleShape2D_54kel")
 
 [node name="BattlePlayer" type="CharacterBody2D" parent="BattleLevel/Party"]
 script = ExtResource("19_ha880")
@@ -565,6 +846,16 @@ shape = SubResource("RectangleShape2D_5u8vb")
 libraries = {
 "": SubResource("AnimationLibrary_c7d7a")
 }
+
+[node name="CandyBomb" type="Sprite2D" parent="BattleLevel/Party/BattlePlayer"]
+position = Vector2(-47.25, -117.25)
+scale = Vector2(0.175781, 0.175781)
+texture = ExtResource("20_vxbw8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BattleLevel/Party/BattlePlayer"]
+position = Vector2(-47.25, -117.25)
+scale = Vector2(0.175781, 0.175781)
+shape = SubResource("CircleShape2D_sio1a")
 
 [node name="BattleGUI" type="Control" parent="BattleLevel"]
 layout_mode = 3
@@ -753,6 +1044,18 @@ theme_override_font_sizes/font_size = 48
 text = "Go Back"
 
 [connection signal="property_list_changed" from="BGMPlayer" to="BGMPlayer" method="_on_property_list_changed"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy" to="MainLevel/Enemies/Enemy" method="_on_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy2" to="MainLevel/Enemies/Enemy2" method="_on_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy2" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy3" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy3" to="MainLevel/Enemies/Enemy3" method="_on_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy4" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy4" to="MainLevel/Enemies/Enemy4" method="_on_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy5" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy5" to="MainLevel/Enemies/Enemy5" method="_on_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy6" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy6" to="MainLevel/Enemies/Enemy6" method="_on_body_entered"]
 [connection signal="animation_finished" from="MainLevel/Party/MainPlayer/AnimationPlayer" to="MainLevel/Party/MainPlayer" method="_on_animation_player_animation_finished" flags=18]
 [connection signal="pressed" from="MainMenu/TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/PlayGameButton" to="MainMenu" method="_on_play_game_button_pressed" flags=18]
 [connection signal="pressed" from="MainMenu/TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/OptionsButton" to="MainMenu" method="_on_options_button_pressed" flags=18]

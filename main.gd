@@ -4,6 +4,7 @@ extends Node
 @onready var opening_cutscene = $OpeningCutscene
 @onready var battle_level = $BattleLevel
 
+
 func _ready():
 	opening_cutscene.connect("finished_cutscene", _on_finished_cutscene)
 	battle_level.connect("entered_battle", _on_entered_battle)

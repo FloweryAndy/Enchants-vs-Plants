@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bw2ae3ab86c"]
+[gd_scene load_steps=21 format=3 uid="uid://bw2ae3ab86c"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b7y4t"]
 [ext_resource type="AudioStream" uid="uid://bgo83arcpnoq" path="res://Sound/BGM/ba ba ba bah.mp3" id="2_cxej3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cq8gx5kr8me05" path="res://Character/Player/battle_player.tscn" id="10_n2b4t"]
 [ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="12_mapth"]
 [ext_resource type="PackedScene" uid="uid://cs2i42vyysvam" path="res://Level/opening_cutscene.tscn" id="12_p8a3u"]
+[ext_resource type="Script" path="res://Level/battle_level.gd" id="12_umvqs"]
 [ext_resource type="PackedScene" uid="uid://b7k25n0raddv0" path="res://Character/Partner/battle_partner.tscn" id="12_v7sen"]
 [ext_resource type="PackedScene" uid="uid://cgcjn564k64cg" path="res://UI/main_menu.tscn" id="13_3bejr"]
 
@@ -78,6 +79,7 @@ update_scale = false
 metadata/_edit_use_anchors_ = true
 
 [node name="BattleLevel" type="Node2D" parent="."]
+script = ExtResource("12_umvqs")
 
 [node name="TileMap" type="TileMap" parent="BattleLevel"]
 tile_set = SubResource("TileSet_ow2yv")

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var animation_player = $AnimationPlayer
 @onready var watering_can = $WateringCan
+@onready var partner_path_remote = $PartnerPathRemote
 
 var speed = 64
 var can_water = true
@@ -11,8 +12,15 @@ var rolling = false
 var can_roll = true
 
 
+func _ready():
+	watering_can.animation_player.connect(
+		"animation_finished", _on_animation_player_animation_finished
+	)
+
+
 func _process(_delta):
 	handle_movement()
+	partner_path_remote.look_at(global_position + Vector2(0,-8) + velocity)
 	handle_animation()
 	move_and_slide()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw2ae3ab86c"]
+[gd_scene load_steps=23 format=3 uid="uid://bw2ae3ab86c"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b7y4t"]
 [ext_resource type="AudioStream" uid="uid://bgo83arcpnoq" path="res://Sound/BGM/ba ba ba bah.mp3" id="2_cxej3"]
@@ -11,9 +11,75 @@
 [ext_resource type="AudioStream" uid="uid://dbx2squhp1hyv" path="res://Sound/BGM/pumpkin patch kid.mp3" id="7_sd4bo"]
 [ext_resource type="TileSet" uid="uid://bwiqc5faypeux" path="res://Level/outside-tileset.tres" id="8_uw7wv"]
 [ext_resource type="PackedScene" uid="uid://cq8gx5kr8me05" path="res://Objects/Character/battle_player.tscn" id="10_n2b4t"]
+[ext_resource type="Texture2D" uid="uid://dox8j4w6psj6r" path="res://Art/Sprite16/player.png" id="11_k5msj"]
 [ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="12_mapth"]
 [ext_resource type="PackedScene" uid="uid://cs2i42vyysvam" path="res://Level/opening_cutscene.tscn" id="12_p8a3u"]
 [ext_resource type="PackedScene" uid="uid://cgcjn564k64cg" path="res://UI/main_menu.tscn" id="13_3bejr"]
+
+[sub_resource type="Curve2D" id="Curve2D_4ctgk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -192, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsh2d"]
+size = Vector2(9, 2)
+
+[sub_resource type="Animation" id="Animation_mgyvl"]
+resource_name = "idle"
+length = 2.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_2vhw0"]
+resource_name = "walk"
+length = 2.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_70s1f"]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4teeg"]
+_data = {
+"idle": SubResource("Animation_mgyvl"),
+"roll": SubResource("Animation_70s1f"),
+"walk": SubResource("Animation_2vhw0")
+}
 
 [sub_resource type="TileSet" id="TileSet_ow2yv"]
 
@@ -41,13 +107,44 @@ layer_0/tile_data = PackedInt32Array(-1900583, 327680, 5, -1835047, 327680, 5, -
 
 [node name="MainPlayer" parent="MainLevel" instance=ExtResource("2_r5syk")]
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MainLevel/MainPlayer"]
+[node name="CameraRemote" type="RemoteTransform2D" parent="MainLevel/MainPlayer"]
 remote_path = NodePath("../../../Camera2D")
 update_rotation = false
 update_scale = false
 
+[node name="PartnerPathRemote" type="RemoteTransform2D" parent="MainLevel/MainPlayer"]
+position = Vector2(0, -8)
+remote_path = NodePath("../../PartnerPath")
+update_scale = false
+
 [node name="MainGUI" parent="MainLevel" instance=ExtResource("4_12yqc")]
 metadata/_edit_use_anchors_ = true
+
+[node name="PartnerPath" type="Path2D" parent="MainLevel"]
+position = Vector2(0, -8)
+curve = SubResource("Curve2D_4ctgk")
+
+[node name="PartnerPathFollow" type="PathFollow2D" parent="MainLevel/PartnerPath"]
+position = Vector2(-15.9793, 0)
+progress = 176.0
+rotates = false
+
+[node name="Partner" type="CharacterBody2D" parent="MainLevel/PartnerPath/PartnerPathFollow"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="MainLevel/PartnerPath/PartnerPathFollow/Partner"]
+rotation = -1.5708
+texture = ExtResource("11_k5msj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainLevel/PartnerPath/PartnerPathFollow/Partner"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_tsh2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainLevel/PartnerPath/PartnerPathFollow/Partner"]
+libraries = {
+"": SubResource("AnimationLibrary_4teeg")
+}
 
 [node name="BattleLevel" type="Node2D" parent="."]
 visible = false

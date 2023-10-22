@@ -2,26 +2,11 @@
 
 [ext_resource type="Script" path="res://Objects/Character/watering_can.gd" id="1_nhu0q"]
 [ext_resource type="Texture2D" uid="uid://c6o58tqx75g4s" path="res://Art/Sprite16/watering_can.png" id="1_t07n3"]
+[ext_resource type="Animation" uid="uid://crsg84xykx6b6" path="res://Resource/pivot.res" id="3_xu6uv"]
 
-[sub_resource type="Animation" id="Animation_43g7v"]
-resource_name = "pivot"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 0.8, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.261799, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b2kdw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mrbwp"]
 _data = {
-"pivot": SubResource("Animation_43g7v")
+"pivot": ExtResource("3_xu6uv")
 }
 
 [node name="WateringCan" type="Node2D"]
@@ -34,5 +19,8 @@ offset = Vector2(6, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_b2kdw")
+"": SubResource("AnimationLibrary_mrbwp")
 }
+
+[node name="WaterSpawner" type="Node2D" parent="."]
+position = Vector2(6, 1)

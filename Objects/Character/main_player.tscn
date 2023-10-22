@@ -1,16 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://uyvhu153r61e"]
+[gd_scene load_steps=10 format=3 uid="uid://uyvhu153r61e"]
 
 [ext_resource type="Script" path="res://Objects/Character/main_player.gd" id="1_vcbdw"]
 [ext_resource type="Texture2D" uid="uid://qkyig53lx6ma" path="res://Art/Sprite16/player_animation.png" id="2_8r8sx"]
-[ext_resource type="Script" path="res://Objects/Character/watering_can.gd" id="3_tbr54"]
-[ext_resource type="Texture2D" uid="uid://c6o58tqx75g4s" path="res://Art/Sprite16/watering_can.png" id="4_qegj1"]
+[ext_resource type="PackedScene" uid="uid://c161anki8ua2t" path="res://Objects/Character/watering_can.tscn" id="2_bxkwo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4ch1"]
 size = Vector2(9, 2)
 
 [sub_resource type="Animation" id="Animation_mgyvl"]
 resource_name = "idle"
-length = 2.8
+length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -19,15 +18,27 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4, 2.1),
+"times": PackedFloat32Array(0, 0.175, 0.35, 0.525),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WateringCan:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(7, -3), Vector2(7, -4), Vector2(7, -5), Vector2(7, -4)]
+}
 
 [sub_resource type="Animation" id="Animation_2vhw0"]
 resource_name = "walk"
-length = 2.8
+length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -36,10 +47,22 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4, 2.1),
+"times": PackedFloat32Array(0, 0.175, 0.35, 0.525),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [4, 5, 6, 7]
+"values": [4, 6, 5, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WateringCan:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(8, -6), Vector2(8, -4)]
 }
 
 [sub_resource type="Animation" id="Animation_70s1f"]
@@ -57,32 +80,27 @@ tracks/0/keys = {
 "values": [0.0, 6.28319]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4teeg"]
-_data = {
-"idle": SubResource("Animation_mgyvl"),
-"roll": SubResource("Animation_70s1f"),
-"walk": SubResource("Animation_2vhw0")
-}
-
-[sub_resource type="Animation" id="Animation_43g7v"]
-resource_name = "pivot"
-length = 1.5
+[sub_resource type="Animation" id="Animation_keo1s"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("WateringCan:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 0.8, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0, 0.261799, 0.0]
+"values": [Vector2(8, -6)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b2kdw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4teeg"]
 _data = {
-"pivot": SubResource("Animation_43g7v")
+"RESET": SubResource("Animation_keo1s"),
+"idle": SubResource("Animation_mgyvl"),
+"roll": SubResource("Animation_70s1f"),
+"walk": SubResource("Animation_2vhw0")
 }
 
 [node name="MainPlayer" type="CharacterBody2D"]
@@ -94,7 +112,6 @@ rotation = 6.28319
 texture = ExtResource("2_8r8sx")
 hframes = 4
 vframes = 2
-frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -1)
@@ -105,19 +122,7 @@ libraries = {
 "": SubResource("AnimationLibrary_4teeg")
 }
 
-[node name="WateringCan" type="Node2D" parent="."]
-position = Vector2(7, -4)
-script = ExtResource("3_tbr54")
-
-[node name="Sprite2D" type="Sprite2D" parent="WateringCan"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_qegj1")
-offset = Vector2(6, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="WateringCan"]
-libraries = {
-"": SubResource("AnimationLibrary_b2kdw")
-}
+[node name="WateringCan" parent="." instance=ExtResource("2_bxkwo")]
+position = Vector2(8, -6)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_finished" from="WateringCan/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

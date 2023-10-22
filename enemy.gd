@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var enemy_number: int = 1
+@export var enemy_number: int = 0
 @export var is_moving = false
 @onready var sprite_2d = $Sprite2D
 
@@ -17,4 +17,5 @@ func _process(_delta):
 
 
 func _on_body_entered(_body: Node2D):
+	global.enemy_number = enemy_number
 	queue_free()

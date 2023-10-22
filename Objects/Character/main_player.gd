@@ -32,3 +32,6 @@ func handle_movement():
 func pour_water():
     can_water = false
     watering_can.pour()
+
+func _on_animation_player_animation_finished(anim_name:StringName):
+    can_water = true

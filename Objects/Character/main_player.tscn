@@ -46,15 +46,15 @@ _data = {
 }
 
 [node name="MainPlayer" type="CharacterBody2D"]
-position = Vector2(4, -6)
 script = ExtResource("1_vcbdw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
 texture = ExtResource("2_ynlf1")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 6)
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_j4ch1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -63,3 +63,4 @@ libraries = {
 }
 
 [node name="WateringCan" parent="." instance=ExtResource("2_bxkwo")]
+position = Vector2(10, -5)

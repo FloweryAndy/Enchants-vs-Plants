@@ -6,11 +6,14 @@ extends Node
 func _ready():
 	opening_cutscene.connect("finished_cutscene", _on_finished_cutscene)
 
+
+
 func _input(event):
 	if event.is_action_pressed("escape"):
 		$MainMenu.visible = true
 		process_mode = Node.PROCESS_MODE_DISABLED
 		camera_2d.zoom = Vector2(.25,.25)
+		camera_2d.position = Vector2.ZERO
 		zoom_in()
 
 func zoom_in():

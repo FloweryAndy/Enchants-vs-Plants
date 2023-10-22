@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgcjn564k64cg"]
+[gd_scene load_steps=6 format=3 uid="uid://cgcjn564k64cg"]
 
+[ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="1_pfjyt"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_ras6x"]
 [ext_resource type="Texture2D" uid="uid://b5vuknhdklqoo" path="res://Art/Cutscene/opening1.png" id="2_mswot"]
+[ext_resource type="Texture2D" uid="uid://dofxk4saogh5b" path="res://Art/Background/title_logo.png" id="3_qd5vg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8by2w"]
 
 [node name="MainMenu" type="CenterContainer"]
 process_mode = 3
-visible = false
 custom_minimum_size = Vector2(1280, 960)
 offset_right = 2560.0
 offset_bottom = 1920.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_pfjyt")
 use_top_left = true
 script = ExtResource("1_ras6x")
 
@@ -31,10 +35,10 @@ layout_mode = 2
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8by2w")
 tabs_visible = false
 
 [node name="Main" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 128
 alignment = 1
@@ -44,11 +48,9 @@ layout_mode = 2
 theme_override_constants/separation = -8
 alignment = 1
 
-[node name="Title" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer"]
+[node name="Title" type="TextureRect" parent="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 90
-text = "Enchants vs Plants"
-horizontal_alignment = 1
+texture = ExtResource("3_qd5vg")
 
 [node name="Subtitle" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer"]
 layout_mode = 2

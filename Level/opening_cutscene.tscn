@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs2i42vyysvam"]
+[gd_scene load_steps=8 format=3 uid="uid://cs2i42vyysvam"]
 
+[ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="1_akjur"]
 [ext_resource type="Script" path="res://Level/opening_cutscene.gd" id="1_r44xa"]
 [ext_resource type="Texture2D" uid="uid://b5vuknhdklqoo" path="res://Art/Cutscene/opening1.png" id="2_bxc7x"]
 [ext_resource type="Texture2D" uid="uid://d2cx757jgmvap" path="res://Art/Cutscene/opening2.png" id="3_mkonv"]
@@ -8,16 +9,17 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="6_wvhhf"]
 
 [node name="OpeningCutscene" type="CenterContainer"]
-visible = false
 custom_minimum_size = Vector2(1280, 960)
 offset_right = 1280.0
 offset_bottom = 960.0
+theme = ExtResource("1_akjur")
 use_top_left = true
 script = ExtResource("1_r44xa")
 opening = Array[Texture]([ExtResource("2_bxc7x"), ExtResource("3_mkonv"), ExtResource("4_rftul"), ExtResource("5_o0wwp")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
+texture = ExtResource("2_bxc7x")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
@@ -26,12 +28,11 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
+offset_top = -324.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
@@ -41,10 +42,10 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/PanelContainer"]
 custom_minimum_size = Vector2(0, 196)
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
 [node name="DialogueLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2

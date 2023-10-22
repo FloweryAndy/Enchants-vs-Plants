@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c161anki8ua2t"]
 
 [ext_resource type="Script" path="res://Character/Player/watering_can.gd" id="1_fk701"]
-[ext_resource type="Texture2D" uid="uid://c6o58tqx75g4s" path="res://Art/Sprite16/watering_can.png" id="2_hx1bc"]
-[ext_resource type="Animation" uid="uid://crsg84xykx6b6" path="res://Resource/pivot.res" id="3_c88ob"]
+[ext_resource type="Texture2D" uid="uid://8qsbvfx2rmko" path="res://Art/Sprite16/watering_can.png" id="2_hx1bc"]
+[ext_resource type="Animation" path="res://Resource/pivot.res" id="3_c88ob"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mrbwp"]
 _data = {

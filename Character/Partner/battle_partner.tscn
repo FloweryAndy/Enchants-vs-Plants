@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7k25n0raddv0"]
 
-[ext_resource type="Texture2D" uid="uid://b4aqsmeu3dg1b" path="res://Art/Sprite128/partner128.png" id="1_lg874"]
+[ext_resource type="Texture2D" uid="uid://c6fujj03ch778" path="res://Art/Sprite128/partner128.png" id="1_lg874"]
 
 [node name="BattlePartner" type="CharacterBody2D"]
 

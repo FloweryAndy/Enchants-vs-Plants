@@ -1,9 +1,24 @@
 [gd_scene load_steps=8 format=3 uid="uid://cs44h6c5lx1vf"]
 
-[ext_resource type="Texture2D" uid="uid://dox8j4w6psj6r" path="res://Art/Sprite16/player.png" id="1_13btm"]
+[ext_resource type="Texture2D" uid="uid://csuv6mdcxqx3j" path="res://Art/Sprite16/player.png" id="1_13btm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsh2d"]
 size = Vector2(9, 2)
+
+[sub_resource type="Animation" id="Animation_keo1s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WateringCan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, -6)]
+}
 
 [sub_resource type="Animation" id="Animation_mgyvl"]
 resource_name = "idle"
@@ -34,6 +49,21 @@ tracks/1/keys = {
 "values": [Vector2(7, -3), Vector2(7, -4), Vector2(7, -5), Vector2(7, -4)]
 }
 
+[sub_resource type="Animation" id="Animation_70s1f"]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
 [sub_resource type="Animation" id="Animation_2vhw0"]
 resource_name = "walk"
 length = 0.7
@@ -61,36 +91,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [Vector2(8, -6), Vector2(8, -4)]
-}
-
-[sub_resource type="Animation" id="Animation_70s1f"]
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_keo1s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WateringCan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, -6)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4teeg"]

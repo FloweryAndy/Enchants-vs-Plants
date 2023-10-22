@@ -45,44 +45,34 @@ tabs_visible = false
 
 [node name="Main" type="VBoxContainer" parent="TextureRect/MarginContainer/PanelContainer/TabContainer"]
 layout_mode = 2
-theme_override_constants/separation = 128
+theme_override_constants/separation = 64
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/PanelContainer/TabContainer/Main"]
-layout_mode = 2
-theme_override_constants/separation = -8
-alignment = 1
-
-[node name="Title" type="TextureRect" parent="TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer"]
+[node name="Title" type="TextureRect" parent="TextureRect/MarginContainer/PanelContainer/TabContainer/Main"]
 layout_mode = 2
 texture = ExtResource("3_qd5vg")
-
-[node name="Subtitle" type="Label" parent="TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Main Menu"
-horizontal_alignment = 1
+stretch_mode = 5
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/MarginContainer/PanelContainer/TabContainer/Main"]
 layout_mode = 2
-theme_override_constants/separation = 48
+theme_override_constants/separation = 64
 
 [node name="PlayGameButton" type="Button" parent="TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Play Game"
 
 [node name="OptionsButton" type="Button" parent="TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Options"
 
 [node name="QuitGameButton" type="Button" parent="TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Quit Game"
 
 [node name="Options" type="VBoxContainer" parent="TextureRect/MarginContainer/PanelContainer/TabContainer"]

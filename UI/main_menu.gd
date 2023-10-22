@@ -1,6 +1,6 @@
 extends Control
 
-@onready var tab_container = $"MarginContainer/PanelContainer/TabContainer"
+@onready var tab_container = $"TextureRect/MarginContainer/PanelContainer/TabContainer"
 
 func _ready():
 	visible = true

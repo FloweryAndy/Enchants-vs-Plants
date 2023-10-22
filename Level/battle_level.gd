@@ -14,3 +14,6 @@ func enter_battle():
 func exit_battle():
 	emit_signal("exited_battle")
 	visible = false
+#Player Turn true or false. True player turn. False enemy turn
+#Player basic candy bomb does 5 damage
+#Enemy has a random chance of a critical hit increasing Pump kid's chance of dying

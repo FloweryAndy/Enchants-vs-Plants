@@ -1,7 +1,9 @@
 extends Control
 
-@onready var main_menu_music = $MainMenuMusic
 @onready var tab_container = $"MarginContainer/PanelContainer/TabContainer"
+
+func _ready():
+	visible = true
 
 func start_game():
 	visible = false
@@ -12,9 +14,17 @@ func exit_game():
 
 func _on_sound_volume_slider_value_changed(value:float):
 	AudioServer.set_bus_volume_db(2, value)
+	if value == -20:
+		AudioServer.set_bus_mute(2, true)
+	else:
+		AudioServer.set_bus_mute(2, false)
 
 func _on_music_volume_slider_value_changed(value:float):
 	AudioServer.set_bus_volume_db(1, value)
+	if value == -20:
+		AudioServer.set_bus_mute(1, true)
+	else:
+		AudioServer.set_bus_mute(1, false)
 
 func _on_quit_game_button_pressed():
 	exit_game()
@@ -24,6 +34,7 @@ func _on_options_button_pressed():
 
 func _on_play_game_button_pressed():
 	start_game()
+	$"..".process_mode = Node.PROCESS_MODE_INHERIT
 
 func _on_back_button_pressed():
 	tab_container.current_tab = 0

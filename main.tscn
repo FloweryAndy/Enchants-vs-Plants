@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_b7y4t"]
 [ext_resource type="AudioStream" uid="uid://bgo83arcpnoq" path="res://Sound/BGM/ba ba ba bah.mp3" id="2_cxej3"]
-[ext_resource type="PackedScene" uid="uid://uyvhu153r61e" path="res://Objects/Character/main_player.tscn" id="2_r5syk"]
+[ext_resource type="PackedScene" uid="uid://uyvhu153r61e" path="res://Character/Player/main_player.tscn" id="2_r5syk"]
 [ext_resource type="Script" path="res://Resource/bgmplayer.gd" id="2_x6ubb"]
 [ext_resource type="PackedScene" uid="uid://behsc24kphsls" path="res://UI/main_gui.tscn" id="4_12yqc"]
 [ext_resource type="AudioStream" uid="uid://pvcgyu3ei0f4" path="res://Sound/BGM/battle on halloween.mp3" id="4_amtum"]
@@ -10,11 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://csdgnv348xuam" path="res://Sound/BGM/exploring for tricks.mp3" id="6_sw7yl"]
 [ext_resource type="AudioStream" uid="uid://dbx2squhp1hyv" path="res://Sound/BGM/pumpkin patch kid.mp3" id="7_sd4bo"]
 [ext_resource type="TileSet" uid="uid://bwiqc5faypeux" path="res://Level/outside-tileset.tres" id="8_uw7wv"]
-[ext_resource type="PackedScene" uid="uid://cs44h6c5lx1vf" path="res://Objects/Partner/main_partner.tscn" id="9_l2qjr"]
-[ext_resource type="PackedScene" uid="uid://cq8gx5kr8me05" path="res://Objects/Character/battle_player.tscn" id="10_n2b4t"]
+[ext_resource type="PackedScene" uid="uid://cs44h6c5lx1vf" path="res://Character/Partner/main_partner.tscn" id="9_l2qjr"]
+[ext_resource type="PackedScene" uid="uid://cq8gx5kr8me05" path="res://Character/Player/battle_player.tscn" id="10_n2b4t"]
 [ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="12_mapth"]
 [ext_resource type="PackedScene" uid="uid://cs2i42vyysvam" path="res://Level/opening_cutscene.tscn" id="12_p8a3u"]
-[ext_resource type="PackedScene" uid="uid://b7k25n0raddv0" path="res://Objects/Partner/battle_partner.tscn" id="12_v7sen"]
+[ext_resource type="PackedScene" uid="uid://b7k25n0raddv0" path="res://Character/Partner/battle_partner.tscn" id="12_v7sen"]
 [ext_resource type="PackedScene" uid="uid://cgcjn564k64cg" path="res://UI/main_menu.tscn" id="13_3bejr"]
 
 [sub_resource type="Curve2D" id="Curve2D_4ctgk"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cq8gx5kr8me05"]
 
-[ext_resource type="Script" path="res://Objects/Character/battle_player.gd" id="1_dsi06"]
+[ext_resource type="Script" path="res://Character/Player/battle_player.gd" id="1_dsi06"]
 [ext_resource type="Texture2D" uid="uid://bw7wnxa8ey5uj" path="res://Art/Sprite128/player_animation2.png" id="2_4tuyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4ch1"]

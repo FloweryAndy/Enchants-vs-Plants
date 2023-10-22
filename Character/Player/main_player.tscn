@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://uyvhu153r61e"]
 
-[ext_resource type="Script" path="res://Objects/Character/main_player.gd" id="1_vcbdw"]
+[ext_resource type="Script" path="res://Character/Player/main_player.gd" id="1_vcbdw"]
 [ext_resource type="Texture2D" uid="uid://qkyig53lx6ma" path="res://Art/Sprite16/player_animation.png" id="2_8r8sx"]
-[ext_resource type="PackedScene" uid="uid://c161anki8ua2t" path="res://Objects/Character/watering_can.tscn" id="2_bxkwo"]
+[ext_resource type="PackedScene" uid="uid://c161anki8ua2t" path="res://Character/Player/watering_can.tscn" id="2_bxkwo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4ch1"]
 size = Vector2(9, 2)

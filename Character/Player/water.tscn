@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://k00vl2xccaxo"]
 
-[ext_resource type="Texture2D" uid="uid://cgit2qmo2lajv" path="res://Art/Sprite16/water.png" id="1_qabul"]
+[ext_resource type="Texture2D" uid="uid://cgit2qmo2lajv" path="res://Art/Sprite16/water.png" id="1_6sbme"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jyqn0"]
 radius = 6.06061
@@ -51,7 +51,7 @@ shape = SubResource("CircleShape2D_jyqn0")
 [node name="Water" type="Sprite2D" parent="."]
 position = Vector2(3, 0)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("1_qabul")
+texture = ExtResource("1_6sbme")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "water"

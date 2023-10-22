@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c161anki8ua2t"]
+[gd_scene load_steps=5 format=3 uid="uid://c161anki8ua2t"]
 
 [ext_resource type="Script" path="res://Objects/Character/watering_can.gd" id="1_nhu0q"]
 [ext_resource type="Texture2D" uid="uid://c6o58tqx75g4s" path="res://Art/Sprite16/watering_can.png" id="1_t07n3"]
-
-[sub_resource type="Animation" id="Animation_kljyf"]
-length = 0.001
 
 [sub_resource type="Animation" id="Animation_43g7v"]
 resource_name = "pivot"
@@ -24,16 +21,13 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b2kdw"]
 _data = {
-"RESET": SubResource("Animation_kljyf"),
 "pivot": SubResource("Animation_43g7v")
 }
 
 [node name="WateringCan" type="Node2D"]
-position = Vector2(10, 2)
 script = ExtResource("1_nhu0q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-6, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_t07n3")
 offset = Vector2(6, 0)

@@ -8,9 +8,11 @@ extends CharacterBody2D
 var speed = 64
 var can_water = true
 
+
 func _process(_delta):
 	handle_movement()
 	move_and_slide()
+
 
 func handle_movement():
 	if Input.is_action_pressed("up"):
@@ -32,11 +34,13 @@ func handle_movement():
 	else:
 		animation_player.current_animation = "walk"
 
+
 func pour_water():
 	if can_water:
 		can_water = false
 		watering_can.pour()
 
-func _on_animation_player_animation_finished(anim_name:StringName):
+
+func _on_animation_player_animation_finished(anim_name: StringName):
 	if anim_name == "pivot":
 		can_water = true

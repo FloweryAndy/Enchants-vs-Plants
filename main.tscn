@@ -17,6 +17,7 @@
 [sub_resource type="TileSet" id="TileSet_ow2yv"]
 
 [node name="Main" type="Node"]
+process_mode = 4
 script = ExtResource("1_b7y4t")
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]

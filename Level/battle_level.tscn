@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd1lwunlc5qt"]
+
+[ext_resource type="Script" path="res://Level/battle_level.gd" id="1_s43qp"]
+[ext_resource type="PackedScene" uid="uid://b7k25n0raddv0" path="res://Character/Partner/battle_partner.tscn" id="2_doi5a"]
+[ext_resource type="PackedScene" uid="uid://cq8gx5kr8me05" path="res://Character/Player/battle_player.tscn" id="3_m6iod"]
+[ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="4_ahd7j"]
+
+[sub_resource type="TileSet" id="TileSet_ow2yv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpu2r"]
+size = Vector2(80, 128)
+
+[node name="BattleLevel" type="Node2D"]
+visible = false
+script = ExtResource("1_s43qp")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ow2yv")
+format = 2
+
+[node name="Party" type="Node2D" parent="."]
+
+[node name="Partners" type="Node2D" parent="Party"]
+
+[node name="BattlePartner1" parent="Party/Partners" instance=ExtResource("2_doi5a")]
+position = Vector2(-128, 0)
+
+[node name="CollisionShape2D" parent="Party/Partners/BattlePartner1" index="1"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_jpu2r")
+
+[node name="BattlePartner2" parent="Party/Partners" instance=ExtResource("2_doi5a")]
+position = Vector2(-256, 0)
+
+[node name="Sprite2D" parent="Party/Partners/BattlePartner2" index="0"]
+frame = 1
+
+[node name="CollisionShape2D" parent="Party/Partners/BattlePartner2" index="1"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_jpu2r")
+
+[node name="BattlePartner3" parent="Party/Partners" instance=ExtResource("2_doi5a")]
+position = Vector2(-384, 0)
+
+[node name="Sprite2D" parent="Party/Partners/BattlePartner3" index="0"]
+frame = 2
+
+[node name="CollisionShape2D" parent="Party/Partners/BattlePartner3" index="1"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_jpu2r")
+
+[node name="BattlePartner4" parent="Party/Partners" instance=ExtResource("2_doi5a")]
+position = Vector2(-512, 0)
+
+[node name="Sprite2D" parent="Party/Partners/BattlePartner4" index="0"]
+frame = 3
+
+[node name="CollisionShape2D" parent="Party/Partners/BattlePartner4" index="1"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_jpu2r")
+
+[node name="BattlePartner5" parent="Party/Partners" instance=ExtResource("2_doi5a")]
+position = Vector2(-640, 0)
+
+[node name="Sprite2D" parent="Party/Partners/BattlePartner5" index="0"]
+frame = 4
+
+[node name="CollisionShape2D" parent="Party/Partners/BattlePartner5" index="1"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_jpu2r")
+
+[node name="BattlePartner6" parent="Party/Partners" instance=ExtResource("2_doi5a")]
+position = Vector2(-768, 0)
+
+[node name="Sprite2D" parent="Party/Partners/BattlePartner6" index="0"]
+frame = 5
+
+[node name="CollisionShape2D" parent="Party/Partners/BattlePartner6" index="1"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_jpu2r")
+
+[node name="BattlePlayer" parent="Party" instance=ExtResource("3_m6iod")]
+
+[node name="BattleGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_ahd7j")
+
+[editable path="Party/Partners/BattlePartner1"]
+[editable path="Party/Partners/BattlePartner2"]
+[editable path="Party/Partners/BattlePartner3"]
+[editable path="Party/Partners/BattlePartner4"]
+[editable path="Party/Partners/BattlePartner5"]
+[editable path="Party/Partners/BattlePartner6"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq8gx5kr8me05"]
+[gd_scene load_steps=12 format=3 uid="uid://cq8gx5kr8me05"]
 
 [ext_resource type="Script" path="res://Character/Player/battle_player.gd" id="1_dsi06"]
 [ext_resource type="Texture2D" uid="uid://dwsaq2h7ooxjc" path="res://Art/Sprite128/player_animation2.png" id="2_4tuyo"]
+[ext_resource type="Texture2D" uid="uid://cejfqv8jpqwra" path="res://Art/Sprite128/candy_bomb.png" id="3_s5iuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4ch1"]
 size = Vector2(59, 101)
@@ -96,6 +97,9 @@ _data = {
 "walk": SubResource("Animation_qqu4n")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ap0i7"]
+radius = 64.1421
+
 [node name="BattlePlayer" type="CharacterBody2D"]
 script = ExtResource("1_dsi06")
 
@@ -113,3 +117,13 @@ shape = SubResource("RectangleShape2D_j4ch1")
 libraries = {
 "": SubResource("AnimationLibrary_4teeg")
 }
+
+[node name="CandyBomb" type="Sprite2D" parent="."]
+position = Vector2(-47.25, -117.25)
+scale = Vector2(0.175781, 0.175781)
+texture = ExtResource("3_s5iuh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-47.25, -117.25)
+scale = Vector2(0.175781, 0.175781)
+shape = SubResource("CircleShape2D_ap0i7")

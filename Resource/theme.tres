@@ -4,9 +4,8 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qof6"]
 texture = ExtResource("1_i6rxn")
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
 modulate_color = Color(1, 1, 1, 0.937255)
 
 [resource]
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_2qof6")
+PanelContainer/styles/text_box = null

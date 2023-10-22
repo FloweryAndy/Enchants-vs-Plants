@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://uyvhu153r61e"]
+[gd_scene load_steps=11 format=3 uid="uid://uyvhu153r61e"]
 
 [ext_resource type="Script" path="res://Objects/Character/main_player.gd" id="1_vcbdw"]
 [ext_resource type="Texture2D" uid="uid://qkyig53lx6ma" path="res://Art/Sprite16/player_animation.png" id="2_8r8sx"]
-[ext_resource type="PackedScene" uid="uid://c161anki8ua2t" path="res://Objects/Character/watering_can.tscn" id="2_bxkwo"]
+[ext_resource type="Script" path="res://Objects/Character/watering_can.gd" id="3_tbr54"]
+[ext_resource type="Texture2D" uid="uid://c6o58tqx75g4s" path="res://Art/Sprite16/watering_can.png" id="4_qegj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4ch1"]
 size = Vector2(9, 2)
@@ -47,6 +48,27 @@ _data = {
 "walk": SubResource("Animation_2vhw0")
 }
 
+[sub_resource type="Animation" id="Animation_43g7v"]
+resource_name = "pivot"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b2kdw"]
+_data = {
+"pivot": SubResource("Animation_43g7v")
+}
+
 [node name="MainPlayer" type="CharacterBody2D"]
 script = ExtResource("1_vcbdw")
 
@@ -66,7 +88,18 @@ libraries = {
 "": SubResource("AnimationLibrary_4teeg")
 }
 
-[node name="WateringCan" parent="." instance=ExtResource("2_bxkwo")]
+[node name="WateringCan" type="Node2D" parent="."]
 position = Vector2(7, -4)
+script = ExtResource("3_tbr54")
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="Sprite2D" type="Sprite2D" parent="WateringCan"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_qegj1")
+offset = Vector2(6, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WateringCan"]
+libraries = {
+"": SubResource("AnimationLibrary_b2kdw")
+}
+
+[connection signal="animation_finished" from="WateringCan/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

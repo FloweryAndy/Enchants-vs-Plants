@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="1_akjur"]
 [ext_resource type="Script" path="res://Level/opening_cutscene.gd" id="1_r44xa"]
-[ext_resource type="Texture2D" uid="uid://bk1gymm6tvgin" path="res://Art/Cutscene/opening1.png" id="2_bxc7x"]
-[ext_resource type="Texture2D" uid="uid://c7qqnf45kyja" path="res://Art/Cutscene/opening2.png" id="3_mkonv"]
-[ext_resource type="Texture2D" uid="uid://d1m4wf0jg8qwe" path="res://Art/Cutscene/opening3.png" id="4_rftul"]
-[ext_resource type="Texture2D" uid="uid://0crski00xf8b" path="res://Art/Cutscene/opening4.png" id="5_o0wwp"]
+[ext_resource type="Texture2D" uid="uid://b5vuknhdklqoo" path="res://Art/Cutscene/opening1.png" id="2_bxc7x"]
+[ext_resource type="Texture2D" uid="uid://d2cx757jgmvap" path="res://Art/Cutscene/opening2.png" id="3_mkonv"]
+[ext_resource type="Texture2D" uid="uid://cxjcpjf1cxhik" path="res://Art/Cutscene/opening3.png" id="4_rftul"]
+[ext_resource type="Texture2D" uid="uid://dkdfso2wap8tb" path="res://Art/Cutscene/opening4.png" id="5_o0wwp"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="6_wvhhf"]
 
 [node name="OpeningCutscene" type="CenterContainer"]

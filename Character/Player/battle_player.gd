@@ -9,4 +9,6 @@ func _ready():
 
 func _process(_delta):
     pass
-
+#pumpkin kid's running in animation
+#pumpkin kid's candy throwing animation
+#pumpkin kid's death animation upon his health reaching 0

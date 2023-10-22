@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cx53cdj71ujx0"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cx53cdj71ujx0"]
 
-[ext_resource type="Texture2D" uid="uid://cwiyg0nmfais6" path="res://Art/menubackground.png" id="1_i6rxn"]
+[ext_resource type="Texture2D" uid="uid://dtitgk0sn8pfc" path="res://Art/menubackground.png" id="1_i6rxn"]
+[ext_resource type="FontFile" uid="uid://ciyueb0nymfpl" path="res://Resource/Font/Maiden Orange-Regular.ttf" id="2_lreoh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qof6"]
 texture = ExtResource("1_i6rxn")
@@ -9,4 +10,5 @@ axis_stretch_vertical = 1
 modulate_color = Color(1, 1, 1, 0.937255)
 
 [resource]
+default_font = ExtResource("2_lreoh")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_2qof6")

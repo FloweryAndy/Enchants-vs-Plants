@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://uyvhu153r61e"]
+[gd_scene load_steps=12 format=3 uid="uid://uyvhu153r61e"]
 
 [ext_resource type="Script" path="res://Objects/Character/main_player.gd" id="1_vcbdw"]
 [ext_resource type="Texture2D" uid="uid://qkyig53lx6ma" path="res://Art/Sprite16/player_animation.png" id="2_8r8sx"]
@@ -42,9 +42,25 @@ tracks/0/keys = {
 "values": [4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_70s1f"]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4teeg"]
 _data = {
 "idle": SubResource("Animation_mgyvl"),
+"roll": SubResource("Animation_70s1f"),
 "walk": SubResource("Animation_2vhw0")
 }
 
@@ -74,10 +90,11 @@ script = ExtResource("1_vcbdw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -8)
+rotation = 6.28319
 texture = ExtResource("2_8r8sx")
 hframes = 4
 vframes = 2
-frame = 2
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -1)
@@ -102,4 +119,5 @@ libraries = {
 "": SubResource("AnimationLibrary_b2kdw")
 }
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="WateringCan/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

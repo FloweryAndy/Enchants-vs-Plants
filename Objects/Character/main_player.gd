@@ -7,10 +7,13 @@ extends CharacterBody2D
 
 var speed = 64
 var can_water = true
+var rolling = false
+var can_roll = true
 
 
 func _process(_delta):
 	handle_movement()
+	handle_animation()
 	move_and_slide()
 
 
@@ -29,7 +32,17 @@ func handle_movement():
 		velocity.x = 0
 	if Input.is_action_just_pressed("interact"):
 		pour_water()
-	if velocity == Vector2.ZERO:
+	if Input.is_action_just_pressed("roll"):
+		if can_roll:
+			can_roll = false
+			rolling = true
+			speed = 256
+
+
+func handle_animation():
+	if rolling == true:
+		animation_player.current_animation = "roll"
+	elif velocity == Vector2.ZERO:
 		animation_player.current_animation = "idle"
 	else:
 		animation_player.current_animation = "walk"
@@ -42,5 +55,10 @@ func pour_water():
 
 
 func _on_animation_player_animation_finished(anim_name: StringName):
-	if anim_name == "pivot":
-		can_water = true
+	match anim_name:
+		"pivot":
+			can_water = true
+		"roll":
+			can_roll = true
+			rolling = false
+			speed = 64

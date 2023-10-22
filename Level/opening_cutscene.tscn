@@ -38,6 +38,7 @@ theme_override_constants/margin_bottom = 64
 
 [node name="PanelContainer" type="PanelContainer" parent="TextureRect/MarginContainer"]
 layout_mode = 2
+theme_type_variation = &"PanelContainerTextBox"
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/PanelContainer"]
 custom_minimum_size = Vector2(0, 196)

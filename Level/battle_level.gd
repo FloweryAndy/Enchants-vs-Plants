@@ -4,6 +4,7 @@ extends Node2D
 func _ready():
 	add_user_signal("entered_battle")
 	add_user_signal("exited_battle")
+	visible = false
 
 
 func enter_battle():

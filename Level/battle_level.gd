@@ -22,5 +22,5 @@ func exit_battle():
 #Enemy has a random chance of a critical hit increasing Pump kid's chance of dying
 
 
-func _on_enemy_body_entered(body: Node2D):
+func _on_enemy_body_entered(_body: Node2D):
 	enter_battle()

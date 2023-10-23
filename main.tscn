@@ -8,18 +8,18 @@
 [ext_resource type="AudioStream" uid="uid://csdgnv348xuam" path="res://Sound/BGM/exploring for tricks.mp3" id="6_sw7yl"]
 [ext_resource type="AudioStream" uid="uid://dbx2squhp1hyv" path="res://Sound/BGM/pumpkin patch kid.mp3" id="7_sd4bo"]
 [ext_resource type="TileSet" uid="uid://e6ecdxumdqdw" path="res://Level/outside_tileset.tres" id="8_5ic3q"]
-[ext_resource type="Script" path="res://enemy.gd" id="9_dl4es"]
-[ext_resource type="Texture2D" uid="uid://wntofpb3s624" path="res://Art/Sprite16/Enemy16.png" id="10_v2umg"]
+[ext_resource type="Script" path="res://Character/Enemy/enemy.gd" id="9_y8hxc"]
+[ext_resource type="Texture2D" uid="uid://wntofpb3s624" path="res://Art/Sprite16/enemy16.png" id="10_kq6ic"]
 [ext_resource type="Script" path="res://Character/Player/main_player.gd" id="10_wsedr"]
-[ext_resource type="Texture2D" uid="uid://qkyig53lx6ma" path="res://Art/Sprite16/player_animation.png" id="11_1fnlf"]
 [ext_resource type="Script" path="res://UI/main_gui.gd" id="11_e68b5"]
-[ext_resource type="Script" path="res://MainPartner.gd" id="11_ywj8b"]
+[ext_resource type="Script" path="res://Character/Partner/main_partner.gd" id="11_sweql"]
 [ext_resource type="Script" path="res://Character/Player/watering_can.gd" id="12_2f6jb"]
-[ext_resource type="Texture2D" uid="uid://bu2x7sjw4245d" path="res://Art/Sprite16/partner_animation.png" id="12_2xdf1"]
+[ext_resource type="Texture2D" uid="uid://bu2x7sjw4245d" path="res://Art/Sprite16/partner16.png" id="12_fvktc"]
 [ext_resource type="Theme" uid="uid://cx53cdj71ujx0" path="res://Resource/theme.tres" id="12_mapth"]
 [ext_resource type="Script" path="res://Level/battle_level.gd" id="12_umvqs"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="12_ynj2j"]
 [ext_resource type="Texture2D" uid="uid://c6o58tqx75g4s" path="res://Art/Sprite16/watering_can.png" id="13_2utco"]
+[ext_resource type="Texture2D" uid="uid://qkyig53lx6ma" path="res://Art/Sprite16/player16.png" id="14_6a0v5"]
 [ext_resource type="Animation" uid="uid://crsg84xykx6b6" path="res://Resource/pivot.res" id="14_lmgjk"]
 [ext_resource type="Texture2D" uid="uid://b4aqsmeu3dg1b" path="res://Art/Sprite128/partner128.png" id="17_1sxjw"]
 [ext_resource type="Texture2D" uid="uid://b1ec4gwxxohje" path="res://Art/Background/battle_background.png" id="17_ipb67"]
@@ -28,12 +28,12 @@
 [ext_resource type="Texture2D" uid="uid://d2cx757jgmvap" path="res://Art/Cutscene/opening2.png" id="19_0nc17"]
 [ext_resource type="Script" path="res://Character/Player/battle_player.gd" id="19_ha880"]
 [ext_resource type="Texture2D" uid="uid://cxjcpjf1cxhik" path="res://Art/Cutscene/opening3.png" id="20_8x0u7"]
-[ext_resource type="Texture2D" uid="uid://bw7wnxa8ey5uj" path="res://Art/Sprite128/player_animation2.png" id="20_u8chc"]
 [ext_resource type="Texture2D" uid="uid://dforgcx0e6ro2" path="res://Art/Sprite128/candy_bomb.png" id="20_vxbw8"]
 [ext_resource type="Texture2D" uid="uid://dkdfso2wap8tb" path="res://Art/Cutscene/opening4.png" id="21_0g8s6"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="22_iwxcy"]
-[ext_resource type="Texture2D" uid="uid://veqmhcupmf5r" path="res://Art/Background/main_menu_background.png" id="23_7gewv"]
-[ext_resource type="Texture2D" uid="uid://dofxk4saogh5b" path="res://Art/Background/title_logo.png" id="24_wxqin"]
+[ext_resource type="Texture2D" uid="uid://bw7wnxa8ey5uj" path="res://Art/Sprite128/player128.png" id="24_aihrq"]
+[ext_resource type="Texture2D" uid="uid://veqmhcupmf5r" path="res://Art/Background/menu_background.png" id="33_aelfh"]
+[ext_resource type="Texture2D" uid="uid://dofxk4saogh5b" path="res://Art/Background/menu_title.png" id="34_rbhx0"]
 
 [sub_resource type="Curve2D" id="Curve2D_4ctgk"]
 _data = {
@@ -349,10 +349,10 @@ one_shot = true
 position = Vector2(69, -8)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("9_dl4es")
+script = ExtResource("9_y8hxc")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy"]
-texture = ExtResource("10_v2umg")
+texture = ExtResource("10_kq6ic")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -370,11 +370,11 @@ libraries = {
 position = Vector2(69, -43)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("9_dl4es")
+script = ExtResource("9_y8hxc")
 enemy_number = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy2"]
-texture = ExtResource("10_v2umg")
+texture = ExtResource("10_kq6ic")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -392,11 +392,11 @@ libraries = {
 position = Vector2(116, -154)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("9_dl4es")
+script = ExtResource("9_y8hxc")
 enemy_number = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy3"]
-texture = ExtResource("10_v2umg")
+texture = ExtResource("10_kq6ic")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -414,11 +414,11 @@ libraries = {
 position = Vector2(-84, -58)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("9_dl4es")
+script = ExtResource("9_y8hxc")
 enemy_number = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy4"]
-texture = ExtResource("10_v2umg")
+texture = ExtResource("10_kq6ic")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -436,11 +436,11 @@ libraries = {
 position = Vector2(-30, 59)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("9_dl4es")
+script = ExtResource("9_y8hxc")
 enemy_number = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy5"]
-texture = ExtResource("10_v2umg")
+texture = ExtResource("10_kq6ic")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -458,11 +458,11 @@ libraries = {
 position = Vector2(45, -111)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("9_dl4es")
+script = ExtResource("9_y8hxc")
 enemy_number = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Enemies/Enemy6"]
-texture = ExtResource("10_v2umg")
+texture = ExtResource("10_kq6ic")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -491,10 +491,10 @@ loop = false
 [node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow"]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("11_ywj8b")
+script = ExtResource("11_sweql")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow/MainPartner"]
-texture = ExtResource("12_2xdf1")
+texture = ExtResource("12_fvktc")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -522,11 +522,11 @@ loop = false
 [node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow2"]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("11_ywj8b")
+script = ExtResource("11_sweql")
 partner_number = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow2/MainPartner"]
-texture = ExtResource("12_2xdf1")
+texture = ExtResource("12_fvktc")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -554,11 +554,11 @@ loop = false
 [node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow3"]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("11_ywj8b")
+script = ExtResource("11_sweql")
 partner_number = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow3/MainPartner"]
-texture = ExtResource("12_2xdf1")
+texture = ExtResource("12_fvktc")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -586,11 +586,11 @@ loop = false
 [node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow4"]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("11_ywj8b")
+script = ExtResource("11_sweql")
 partner_number = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow4/MainPartner"]
-texture = ExtResource("12_2xdf1")
+texture = ExtResource("12_fvktc")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -618,11 +618,11 @@ loop = false
 [node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow5"]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("11_ywj8b")
+script = ExtResource("11_sweql")
 partner_number = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow5/MainPartner"]
-texture = ExtResource("12_2xdf1")
+texture = ExtResource("12_fvktc")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -650,11 +650,11 @@ loop = false
 [node name="MainPartner" type="CharacterBody2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow6"]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("11_ywj8b")
+script = ExtResource("11_sweql")
 partner_number = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/PartnerPath/PartnerPathFollow6/MainPartner"]
-texture = ExtResource("12_2xdf1")
+texture = ExtResource("12_fvktc")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -681,7 +681,7 @@ script = ExtResource("10_wsedr")
 [node name="Sprite2D" type="Sprite2D" parent="MainLevel/Party/MainPlayer"]
 position = Vector2(1, -8)
 rotation = 6.28319
-texture = ExtResource("11_1fnlf")
+texture = ExtResource("14_6a0v5")
 hframes = 4
 vframes = 2
 
@@ -834,7 +834,7 @@ script = ExtResource("19_ha880")
 
 [node name="Sprite2D" type="Sprite2D" parent="BattleLevel/Party/BattlePlayer"]
 position = Vector2(0, -64)
-texture = ExtResource("20_u8chc")
+texture = ExtResource("24_aihrq")
 hframes = 4
 vframes = 4
 
@@ -927,7 +927,7 @@ script = ExtResource("22_iwxcy")
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 2
-texture = ExtResource("23_7gewv")
+texture = ExtResource("33_aelfh")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/TextureRect"]
@@ -957,7 +957,7 @@ alignment = 1
 
 [node name="Title" type="TextureRect" parent="MainMenu/TextureRect/MarginContainer/PanelContainer/TabContainer/Main"]
 layout_mode = 2
-texture = ExtResource("24_wxqin")
+texture = ExtResource("34_rbhx0")
 stretch_mode = 5
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MainMenu/TextureRect/MarginContainer/PanelContainer/TabContainer/Main"]
@@ -1048,14 +1048,14 @@ text = "Go Back"
 [connection signal="body_entered" from="MainLevel/Enemies/Enemy" to="BattleLevel" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="MainLevel/Enemies/Enemy2" to="MainLevel/Enemies/Enemy2" method="_on_body_entered"]
 [connection signal="body_entered" from="MainLevel/Enemies/Enemy2" to="BattleLevel" method="_on_enemy_body_entered"]
-[connection signal="body_entered" from="MainLevel/Enemies/Enemy3" to="BattleLevel" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="MainLevel/Enemies/Enemy3" to="MainLevel/Enemies/Enemy3" method="_on_body_entered"]
-[connection signal="body_entered" from="MainLevel/Enemies/Enemy4" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy3" to="BattleLevel" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="MainLevel/Enemies/Enemy4" to="MainLevel/Enemies/Enemy4" method="_on_body_entered"]
-[connection signal="body_entered" from="MainLevel/Enemies/Enemy5" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy4" to="BattleLevel" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="MainLevel/Enemies/Enemy5" to="MainLevel/Enemies/Enemy5" method="_on_body_entered"]
-[connection signal="body_entered" from="MainLevel/Enemies/Enemy6" to="BattleLevel" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy5" to="BattleLevel" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="MainLevel/Enemies/Enemy6" to="MainLevel/Enemies/Enemy6" method="_on_body_entered"]
+[connection signal="body_entered" from="MainLevel/Enemies/Enemy6" to="BattleLevel" method="_on_enemy_body_entered"]
 [connection signal="animation_finished" from="MainLevel/Party/MainPlayer/AnimationPlayer" to="MainLevel/Party/MainPlayer" method="_on_animation_player_animation_finished" flags=18]
 [connection signal="pressed" from="MainMenu/TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/PlayGameButton" to="MainMenu" method="_on_play_game_button_pressed" flags=18]
 [connection signal="pressed" from="MainMenu/TextureRect/MarginContainer/PanelContainer/TabContainer/Main/VBoxContainer2/OptionsButton" to="MainMenu" method="_on_options_button_pressed" flags=18]

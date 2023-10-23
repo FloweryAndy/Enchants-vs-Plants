@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu2x7sjw4245d"
-path="res://.godot/imported/partner_animation.png-8594b8b985afee71945dd60c0edcbb9a.ctex"
+uid="uid://p8agc6n5pnta"
+path="res://.godot/imported/inside.png-1f0bc564a04fd661ccfa54cc1f3b69b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprite16/partner_animation.png"
-dest_files=["res://.godot/imported/partner_animation.png-8594b8b985afee71945dd60c0edcbb9a.ctex"]
+source_file="res://Art/Tileset/inside.png"
+dest_files=["res://.godot/imported/inside.png-1f0bc564a04fd661ccfa54cc1f3b69b3.ctex"]
 
 [params]
 

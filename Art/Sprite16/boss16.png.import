@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clsff7e8bq3hs"
-path="res://.godot/imported/outside-tileset.png-fb58125fa928864b7a1ed274d3b3b16a.ctex"
+uid="uid://38jkj8sbtslp"
+path="res://.godot/imported/boss16.png-4e44b318edbce36ec629076cd70309c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tileset/outside-tileset.png"
-dest_files=["res://.godot/imported/outside-tileset.png-fb58125fa928864b7a1ed274d3b3b16a.ctex"]
+source_file="res://Art/Sprite16/boss16.png"
+dest_files=["res://.godot/imported/boss16.png-4e44b318edbce36ec629076cd70309c9.ctex"]
 
 [params]
 

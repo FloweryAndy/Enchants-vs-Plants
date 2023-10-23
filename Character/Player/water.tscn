@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://k00vl2xccaxo"]
 
-[ext_resource type="Texture2D" uid="uid://bwwtykvocrv8v" path="res://Art/Sprite16/water.png" id="1_6sbme"]
+[ext_resource type="Texture2D" uid="uid://cgit2qmo2lajv" path="res://Art/Sprite16/water.png" id="1_6sbme"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jyqn0"]
 radius = 6.06061

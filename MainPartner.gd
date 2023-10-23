@@ -17,7 +17,7 @@ func _process(_delta):
 	last_position = global_position.normalized()
 	if not is_moving:
 		$AnimationPlayer.current_animation = "walk"
-		path_follow.progress *= 1.01
+		path_follow.progress_ratio *= 1.01
 	else:
 		$AnimationPlayer.current_animation = "idle"
 		path_follow.progress_ratio /= 1.01

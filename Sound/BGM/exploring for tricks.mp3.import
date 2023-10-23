@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csdgnv348xuam"
+path="res://.godot/imported/exploring for tricks.mp3-cca9efaf3664d814e3db015b2e93d2bf.mp3str"
+
+[deps]
+
+source_file="res://Sound/BGM/exploring for tricks.mp3"
+dest_files=["res://.godot/imported/exploring for tricks.mp3-cca9efaf3664d814e3db015b2e93d2bf.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://liy5id8yvo4m"
+path="res://.godot/imported/opening_cutscene.dialogue-c567f139995436e99a6c45fba3af7388.tres"
+
+[deps]
+
+source_file="res://Level/opening_cutscene.dialogue"
+dest_files=["res://.godot/imported/opening_cutscene.dialogue-c567f139995436e99a6c45fba3af7388.tres"]
+
+[params]
+
+defaults=true

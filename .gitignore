@@ -1,6 +1,15 @@
 # Godot 4+ specific ignores
 .godot/
-.directory
+
+# Godot-specific ignores
+.import/
+export.cfg
 export_presets.cfg
-*.import
-.vscode/
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json

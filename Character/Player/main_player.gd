@@ -20,7 +20,7 @@ func _ready():
 
 func _process(_delta):
 	handle_movement()
-	partner_path_remote.look_at(global_position + Vector2(0,-8) + velocity)
+	partner_path_remote.look_at(global_position + Vector2(0, -8) + velocity)
 	handle_animation()
 	move_and_slide()
 
